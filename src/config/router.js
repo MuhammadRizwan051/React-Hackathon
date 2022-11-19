@@ -1,21 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../screens/Home";
-import About from "../screens/About";
-import Contact from "../screens/Contact";
-import NotFound from "../screens/NotFound";
-import Dashboard from "../screens/Dashboard";
+import Login from "../screens/login";
+import Signup from "../screens/signup";
+
 
 function AppRouter() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          {/* <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="dashboard/*" element={<Dashboard />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </Router>
     </>
