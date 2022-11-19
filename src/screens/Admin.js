@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import ResponsiveAppBar from "../AppBar";
-import Feedback from "./Dashboard_screens/Feedback";
-import Message from "./Dashboard_screens/Message";
-import Notification from "./Dashboard_screens/Notification";
+import Feedback from "./adminScreens/Feedback";
+import Message from "./adminScreens/Message";
+import Notification from "./adminScreens/Notification";
 
 function Dashboard() {
   return (
