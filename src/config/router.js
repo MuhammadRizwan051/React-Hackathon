@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Admin from "../screens/admin";
 import Login from "../screens/login";
-import NotFound from "../screens/NotFound";
+// import NotFound from "../screens/NotFound";
 import Signup from "../screens/signup";
 
 
@@ -18,7 +18,7 @@ function AppRouter() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="dashboard/*" element={<Dashboard />} /> */}
-          <Route path="*" element={<NotFound />} /> 
+          {/* <Route path="*" element={<NotFound />} />  */}
         </Routes>
       </Router>
     </>

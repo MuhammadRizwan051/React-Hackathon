@@ -21,8 +21,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { logoutUser } from "../../config/firebasemethod";
 import { AccountCircle } from "@mui/icons-material";
-import Cities from "./cities";
-import Countries from "./countries";
+import Orders from "./orders";
+import Products from "./products";
+import AdminProfile from "./adminProfile";
 
 
 const drawerWidth = 240;
@@ -74,12 +75,12 @@ function MainLayout(props) {
 
     const drawer = (
 
-        <div>
-            <Typography variant="h6" sx={{ my: 2, textAlign: "center" }}>
+        <div style={{}}>
+            <Typography variant="h5" sx={{ my: 2, textAlign: "center", fontFamily:'cursive',  }}>
                 Admin
             </Typography>
             <Divider />
-            <List>
+            <List sx={{minHeight: '92vh', }}>
                 {datasource.length > 0 && datasource.map((text, index) => (
                     <ListItem key={index} disablePadding>
                         <ListItemButton onClick={() => { navigate(text.url) }}>
@@ -99,13 +100,14 @@ function MainLayout(props) {
 
 
     return (
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex"}}>
             <CssBaseline />
             <AppBar
                 position="fixed"
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+                    // backgroundColor: '#153462' 
                 }}
             >
                 <Toolbar sx={{ justifyContent: { xs: "space-between", sm: "right" } }}>
@@ -201,8 +203,9 @@ function MainLayout(props) {
             >
                 <Box>
                     <Routes>
-                        <Route path='cities' element={<Cities />} />
-                        <Route path='countries' element={<Countries />} />
+                        <Route path='orders' element={<Orders />} />
+                        <Route path='products' element={<Products />} />
+                        <Route path='profile' element={<AdminProfile />} />
                     </Routes>
                 </Box>
             </Box>

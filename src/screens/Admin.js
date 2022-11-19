@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Cities from './adminScreens/cities'
 import MainLayout from './adminScreens/mainLayout'
-import loaderImg from "../assets/loader.gif";
 import { useNavigate } from 'react-router-dom';
 import { checkUser } from '../config/firebasemethod';
-import Countries from './adminScreens/countries';
 import SMFullScreenLoader from '../components/SMFullScreenLoader';
+import Orders from './adminScreens/orders';
+import Products from './adminScreens/products';
 
 function Admin() {
   const navigate = useNavigate();
@@ -13,14 +12,14 @@ function Admin() {
 
   const list = [
     {
-      name: 'Countries',
-      url: 'countries',
-      element: <Countries />
+      name: 'Orders',
+      url: 'orders',
+      element: <Orders />
     },
     {
-      name: 'Cities',
-      url: 'cities',
-      element: <Cities />
+      name: 'Products',
+      url: 'products',
+      element: <Products />
     },
   ]
 
@@ -44,7 +43,7 @@ function Admin() {
     loader ?
       <SMFullScreenLoader /> :
       <>
-        <MainLayout datasource={list} />
+        <MainLayout datasource={list} profileNode='profile' />
       </>
   );
 }

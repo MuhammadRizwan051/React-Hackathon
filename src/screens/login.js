@@ -24,7 +24,7 @@ function Login() {
         // navigate(`/admin/${success.id.slice(0, 8)}`)
         // navigate(`/${success.id}`)
         setIsLoading(false)
-        navigate('/admin')
+        navigate(`/${success.id}`)
         // if (email === 'admin@gmail.com') {
         //   navigate(`/admin/${success.id}`)
         // }
