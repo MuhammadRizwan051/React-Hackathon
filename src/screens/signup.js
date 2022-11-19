@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import '../App.css';
 import CircularProgress from "@mui/material/CircularProgress";
 import userImg from '../assets/user.png'
+import SMButton from "../components/SMButton";
 
 
 function Signup() {
@@ -74,9 +75,7 @@ function Signup() {
             />
           </Box>
           <Box my={2}>
-            <Button className='button' variant="contained" size="large" fullWidth onClick={signUp}>
-              {isLoading ? <CircularProgress /> : 'SIGNUP'}
-            </Button>
+            <SMButton label='SIGNUP' size="large" loading={isLoading} onClick={signUp} className='button' fullWidth='true' />
           </Box>
           <Box>
             <Typography sx={{ fontWeight: 'bold', }}>Already have an account ? <Link to="/" style={{ textDecoration: 'none' }}>LOGIN</Link></Typography>

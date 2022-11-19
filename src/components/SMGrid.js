@@ -1,12 +1,17 @@
+import { CircularProgress, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import SMLoader from "./SMLoader";
+
 function SMGrid(props) {
-    const { datasource, Cols, onRowClick } = props;
+    const { datasource, Cols, onRowClick, style, gridLoading } = props;
 
     console.log(datasource, Cols);
 
     return (
         <>
+
             {Cols && Array.isArray(Cols) && (
-                <table style={{ width: "100%" }} align='left'>
+                <table style={style} align='left'>
                     <thead>
                         <tr>
                             <th>S.No.</th>
@@ -16,20 +21,28 @@ function SMGrid(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {datasource &&
-                            Array.isArray(datasource) &&
-                            datasource.length > 0 ? (
-                            datasource.map((x, i) => (
-                                <tr onClick={()=>onRowClick(x)} className={onRowClick ? "rowHover" : ""} key={i}>
-                                    <td>{i + 1}</td>
-                                    {Cols.map((y, ind) => (
-                                        <td key={ind}>{x[y.key]}</td>
-                                    ))}
-                                </tr>
-                            ))
-                        ) : (
-                            <h1>No Data Found</h1>
-                        )}
+                        {
+                        gridLoading ? <SMLoader /> : (
+                            datasource &&
+                                Array.isArray(datasource) &&
+                                datasource.length > 0 ? (
+                                datasource.map((x, i) => (
+                                    <tr onClick={() => onRowClick(x)} className={onRowClick ? "rowHover" : ""} key={i}>
+                                        <td>{i + 1}</td>
+                                        {Cols.map((y, ind) => (
+                                            <td key={ind}>{x[y.key]}</td>
+                                        ))}
+                                    </tr>
+                                ))
+                            ) : (
+                                <>
+                                    {/* <Box sx={{ border: '5px solid black' }}>? */}
+                                    <Typography>No Data Found</Typography>
+                                    {/* </Box>? */}
+                                </>
+                            )
+                        )
+                        }
                     </tbody>
                 </table>
             )}

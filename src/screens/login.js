@@ -3,9 +3,10 @@ import { Typography, Button, TextField, Box } from "@mui/material";
 import { loginUser } from "../config/firebasemethod";
 import { Link, useNavigate } from "react-router-dom";
 import '../App.css';
-// import Loader from '../assets/loader.gif'
+import Loader from '../assets/1.gif'
 import CircularProgress from "@mui/material/CircularProgress";
 import userImg from '../assets/user.png'
+import SMButton from "../components/SMButton";
 
 
 function Login() {
@@ -23,6 +24,7 @@ function Login() {
         // navigate(`/admin/${success.id.slice(0, 8)}`)
         // navigate(`/${success.id}`)
         setIsLoading(false)
+        navigate('/admin')
         // if (email === 'admin@gmail.com') {
         //   navigate(`/admin/${success.id}`)
         // }
@@ -70,9 +72,7 @@ function Login() {
             />
           </Box>
           <Box my={2}>
-            <Button className='button' variant="contained" size="large" fullWidth onClick={login}>
-              {isLoading ? <CircularProgress /> : 'Login'}
-            </Button>
+            <SMButton label='Login' size="large" loading={isLoading} onClick={login} className='button' fullWidth='true' />
           </Box>
           <Box>
             <Typography sx={{ fontWeight: 'bold' }}>Create new account <Link to="/signup" style={{ textDecoration: 'none' }}>SIGN UP</Link></Typography>

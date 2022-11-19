@@ -1,7 +1,7 @@
 import Switch from '@mui/material/Switch'
 
 function SMSwitch(props) {
-    const {label, onChange, value} = props
+  const { label, onChange, value } = props
 
   return (
     <>
@@ -11,3 +11,11 @@ function SMSwitch(props) {
 }
 
 export default SMSwitch
+
+
+// Use this
+//   const [courseStatus, setCourseStatus] = useState(true);
+//   <SMSwitch
+// label = "ABC"
+// onChange = {(e) => setCourseStatus(e.target.checked)}
+// />
