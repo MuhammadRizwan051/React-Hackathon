@@ -17,7 +17,7 @@ function Signup() {
 
   let signUp = () => {
     setIsLoading(true)
-    signUpUser({ email, password })
+    signUpUser({ email, password, category:'user' })
       .then((success) => {
         setIsLoading(false)
         // Signed in

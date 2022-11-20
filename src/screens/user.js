@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import MainLayout from './adminScreens/mainLayout'
+// import MainLayout from './adminScreens/mainLayout'
+import MainLayout from '../screens/mainLayout'
 import { useNavigate } from 'react-router-dom';
 import { checkUser } from '../config/firebasemethod';
 import SMFullScreenLoader from '../components/SMFullScreenLoader';
-import Transport from './adminScreens/transport';
-import BookingDetails from './adminScreens/bookingDetails';
+import Booking from './booking';
 
-function Admin() {
+function User() {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
 
   const list = [
     {
-      name: 'Transport',
-      url: 'transport',
-      element: <Transport />
-    },
-    {
-      name: 'Booking Details',
-      url: 'bookingDetails',
-      element: <BookingDetails />
+      name: 'Booking',
+      url: 'transportBooking',
+      element: <Booking />
     },
     
   ]
@@ -49,4 +44,4 @@ function Admin() {
   );
 }
 
-export default Admin
+export default User

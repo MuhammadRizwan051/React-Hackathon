@@ -25,13 +25,14 @@ function Login() {
         // navigate(`/${success.id}`)
         setIsLoading(false)
         navigate(`/${success.id}`)
-        // if (email === 'admin@gmail.com') {
-        //   navigate(`/admin/${success.id}`)
-        // }
-        // else {
-        //   navigate(`/student/${success.id}`)
-        // }
-        // console.log((success))
+        console.log(success)
+        if (success.category === 'user') {
+          navigate(`/user/${success.id}`)
+        }
+        if(success.category === 'admin') {
+          navigate(`/admin/${success.id}`)
+        }
+        console.log((success))
       })
       .catch((error) => {
         setIsLoading(false)

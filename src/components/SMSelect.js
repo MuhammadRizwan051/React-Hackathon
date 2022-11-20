@@ -3,7 +3,7 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import { getData } from '../config/firebasemethod'
 
 function SMSelect(props) {
-    const { label, value, onChange, disabled, datasource, required, fullWidth, displayField, valueField, nodeName } = props
+    const { label, value, onChange, disabled, datasource, required, fullWidth, displayField, valueField, nodeName, variant } = props
 
     const [dtSource, setDtSource] = useState(datasource)
     // const [arr, setArr] = useState([])
@@ -45,6 +45,7 @@ function SMSelect(props) {
                 <InputLabel id="demo-simple-select-label">{label}</InputLabel>
                 <Select
                     required={required}
+                    variant={variant}
                     fullWidth={true}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"

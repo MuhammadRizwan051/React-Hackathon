@@ -14,12 +14,12 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 
 let signUpUser = (obj) => {
-  let { email, password } = obj;
+  let { email, password, category } = obj;
 
   // === this promise will return on Signup page. ===
   return new Promise((resolve, reject) => {
     // === this "then" will give the status of Authentication. ===
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password, category)
       .then((userCredential) => {
         // user successfully registerd in authentication
         const user = userCredential.user;
@@ -44,9 +44,9 @@ let signUpUser = (obj) => {
 };
 
 let loginUser = (obj) => {
-  let { email, password } = obj;
+  let { email, password, category } = obj;
   return new Promise((resolve, reject) => {
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password, category)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
@@ -104,10 +104,10 @@ let sendData = (obj, nodeName, id) => {
       postListRef = ref(database, `${nodeName}/${obj.id}`)
     }
     set(postListRef, obj)
-      .then(() => {
-        console.log(`Data Send Successfully on this node ${nodeName}/${obj.id}`)
-      })
-      .catch((err) => {
+    .then(() => {
+      console.log(`Data Send Successfully on this node ${nodeName}/${obj.id}`)
+    })
+    .catch((err) => {
         console.log(err)
       })
   })

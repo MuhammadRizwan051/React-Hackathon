@@ -19,12 +19,10 @@ import Typography from "@mui/material/Typography";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { logoutUser } from "../../config/firebasemethod";
+import { logoutUser } from "../config/firebasemethod";
 import { AccountCircle } from "@mui/icons-material";
-import Transport from "./transport";
-import Products from "./products";
-import AdminProfile from "./adminProfile";
-import BookingDetails from "./bookingDetails";
+import Booking from "./booking";
+import UserProfile from "./userProfile";
 
 
 const drawerWidth = 240;
@@ -78,7 +76,7 @@ function MainLayout(props) {
 
         <div style={{}}>
             <Typography variant="h5" sx={{ my: 2, textAlign: "center", fontFamily:'cursive',  }}>
-                Admin
+                User
             </Typography>
             <Divider />
             <List sx={{minHeight: '92vh', }}>
@@ -206,9 +204,9 @@ function MainLayout(props) {
             >
                 <Box sx={{backgroundColor:'lightBlue'}}>
                     <Routes>
-                        <Route path='transport' element={<Transport />} />
-                        <Route path='bookingDetails' element={<BookingDetails />} />
-                        <Route path='profile' element={<AdminProfile />} />
+                        <Route path='transportBooking' element={<Booking />} />
+                        {/* <Route path='products' element={<Products />} /> */}
+                        <Route path='userProfile' element={<UserProfile />} />
                     </Routes>
                 </Box>
             </Box>
