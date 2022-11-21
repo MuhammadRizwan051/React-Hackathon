@@ -9,6 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import trafficImage from '../assets/bykea.png'
 import rickshawImage from '../assets/rickshaw.png'
 import bikeImage from '../assets/bike.png'
+import taxiImage from '../assets/taxi.png'
+import coasterImage from '../assets/coaster.png'
+import hiaceImage from '../assets/hiace.png'
+import carImage from '../assets/car.png'
 import SMNavbar from '../components/SMNavbar'
 import { Box } from '@mui/system';
 // import Container from '@mui/material/Container'
@@ -50,29 +54,74 @@ function Cards() {
 
 
                         <Box sx={{ backgroundColor: '#F2F5F8' }}>
-                            <Grid container paddingX={25} columnSpacing={2} mt={5}>
-                                <Grid item md={3} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '300px', width:'100%' }}>
+                            <Grid container px={15} columnSpacing={2} mt={5}>
+                                <Grid item md={2} sm={6}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
                                         <Card.Img variant="top" src={rickshawImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
                                         <Card.Footer style={{height:'20%'}}>
                                             <Card.Title>Rickshaw</Card.Title>
-                                            {/* <small className="text-muted">Last updated 3 mins ago</small> */}
+                                            {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
-                                <Grid item md={3} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '300px', width:'100%' }}>
+                                <Grid item md={2} sm={6}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                        <Card.Img variant="top" src={carImage} style={{ width: '100%', height: '80%' }} />
+                                        {/* <Card.Body style={{ height: '53%' }}>
+                                        </Card.Body> */}
+                                        <Card.Footer style={{height:'20%'}}>
+                                            <Card.Title>Car</Card.Title>
+                                            {/* <small className="text-muted">Rickshaw</small> */}
+                                        </Card.Footer>
+                                    </Card>
+                                </Grid>
+                                <Grid item md={2} sm={6}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
                                         <Card.Img variant="top" src={bikeImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
                                         <Card.Footer style={{height:'20%'}}>
-                                            <Card.Title>Rickshaw</Card.Title>
-                                            {/* <small className="text-muted">Last updated 3 mins ago</small> */}
+                                            <Card.Title>Bike</Card.Title>
+                                            {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
+                                <Grid item md={2} sm={6}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                        <Card.Img variant="top" src={coasterImage} style={{ width: '100%', height: '80%' }} />
+                                        {/* <Card.Body style={{ height: '53%' }}>
+                                        </Card.Body> */}
+                                        <Card.Footer style={{height:'20%'}}>
+                                            <Card.Title>Coaster</Card.Title>
+                                            {/* <small className="text-muted">Rickshaw</small> */}
+                                        </Card.Footer>
+                                    </Card>
+                                </Grid>
+                                <Grid item md={2} sm={6}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                        <Card.Img variant="top" src={taxiImage} style={{ width: '100%', height: '80%' }} />
+                                        {/* <Card.Body style={{ height: '53%' }}>
+                                        </Card.Body> */}
+                                        <Card.Footer style={{height:'20%'}}>
+                                            <Card.Title>Taxi</Card.Title>
+                                            {/* <small className="text-muted">Rickshaw</small> */}
+                                        </Card.Footer>
+                                    </Card>
+                                </Grid>
+                                <Grid item md={2} sm={6}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                        <Card.Img variant="top" src={hiaceImage} style={{ width: '100%', height: '80%' }} />
+                                        {/* <Card.Body style={{ height: '53%' }}>
+                                        </Card.Body> */}
+                                        <Card.Footer style={{height:'20%'}}>
+                                            <Card.Title>Hiace</Card.Title>
+                                            {/* <small className="text-muted">Rickshaw</small> */}
+                                        </Card.Footer>
+                                    </Card>
+                                </Grid>
+                                
                             </Grid>
                         </Box>
 
