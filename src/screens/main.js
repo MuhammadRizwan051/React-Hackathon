@@ -53,80 +53,81 @@ function Cards() {
                         <img src={trafficImage} style={{ width: '90vh' }} />
 
 
-                        <Box sx={{ backgroundColor: '#F2F5F8' }}>
-                            <Grid container px={15} columnSpacing={2} mt={5}>
+                        <Box sx={{ backgroundColor: '#F2F5F8' }} px={15} py={20}>
+                            <Typography height='10%' variant='h3' sx={{ fontWeight: 'bold', fontFamily: 'cursive' }} mb={10}>One app for everyday needs</Typography>
+                            <Grid container columnSpacing={2} mt={5}>
                                 <Grid item md={2} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width: '100%' }}>
                                         <Card.Img variant="top" src={rickshawImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
-                                        <Card.Footer style={{height:'20%'}}>
+                                        <Card.Footer style={{ height: '20%' }}>
                                             <Card.Title>Rickshaw</Card.Title>
                                             {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
                                 <Grid item md={2} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width: '100%' }}>
                                         <Card.Img variant="top" src={carImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
-                                        <Card.Footer style={{height:'20%'}}>
+                                        <Card.Footer style={{ height: '20%' }}>
                                             <Card.Title>Car</Card.Title>
                                             {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
                                 <Grid item md={2} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width: '100%' }}>
                                         <Card.Img variant="top" src={bikeImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
-                                        <Card.Footer style={{height:'20%'}}>
+                                        <Card.Footer style={{ height: '20%' }}>
                                             <Card.Title>Bike</Card.Title>
                                             {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
                                 <Grid item md={2} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width: '100%' }}>
                                         <Card.Img variant="top" src={coasterImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
-                                        <Card.Footer style={{height:'20%'}}>
+                                        <Card.Footer style={{ height: '20%' }}>
                                             <Card.Title>Coaster</Card.Title>
                                             {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
                                 <Grid item md={2} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width: '100%' }}>
                                         <Card.Img variant="top" src={taxiImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
-                                        <Card.Footer style={{height:'20%'}}>
+                                        <Card.Footer style={{ height: '20%' }}>
                                             <Card.Title>Taxi</Card.Title>
                                             {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
                                 <Grid item md={2} sm={6}>
-                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width:'100%' }}>
+                                    <Card style={{ boxShadow: '1px 1px 5px 0px lightGrey', borderRadius: '30px', height: '250px', width: '100%' }}>
                                         <Card.Img variant="top" src={hiaceImage} style={{ width: '100%', height: '80%' }} />
                                         {/* <Card.Body style={{ height: '53%' }}>
                                         </Card.Body> */}
-                                        <Card.Footer style={{height:'20%'}}>
+                                        <Card.Footer style={{ height: '20%' }}>
                                             <Card.Title>Hiace</Card.Title>
                                             {/* <small className="text-muted">Rickshaw</small> */}
                                         </Card.Footer>
                                     </Card>
                                 </Grid>
-                                
+
                             </Grid>
                         </Box>
 
                         <Box>
-                            <Grid container paddingX={25} columnSpacing={2} rowSpacing={3} mt={5} >
+                            <Grid container paddingX={25} columnSpacing={2} rowSpacing={3}  >
                                 {data && data.map((e, i) => (
                                     <Grid item md={3}>
                                         <Card style={{ boxShadow: '0px 0px 2px', }} onClick={() => bookNow(e)}>
