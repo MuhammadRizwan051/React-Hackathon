@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getData } from '../config/firebasemethod'
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import vehicle from "../assets/vehicle.jpg"
 import { Grid, Typography, } from '@mui/material';
@@ -47,19 +47,21 @@ function Cards() {
                         <Grid container paddingX={25} columnSpacing={2} rowSpacing={3} mt={5} >
                             {data && data.map((e, i) => (
                                 <Grid item md={3}>
-                                    <Card style={{ boxShadow: '0px 0px 2px' }} onClick={() => bookNow(e)}>
-                                        <Card.Img variant="top" src={vehicle} style={{ height: '47%' }} />
-                                        <Card.Body style={{ height: '53%' }}>
-                                            <Card.Title>{` ${e.vehicle}`}</Card.Title>
-                                            <Card.Text>{`No. Of Seats ${e.noOfSeats}`}</Card.Text>
-                                            <Card.Text>{`Price: ${e.pricePerSeat}`}</Card.Text>
-                                            <Card.Text>{`Route: ${e.routes}`}</Card.Text>
-                                            <Card.Text>{`Transport Category: ${e.transportCategory}`}</Card.Text>
-                                            <Card.Footer>
-                                                <small className="text-muted">Last updated 3 mins ago</small>
-                                            </Card.Footer>
-                                        </Card.Body>
-                                    </Card>
+                                    {/* <CardGroup> */}
+                                        <Card style={{ boxShadow: '0px 0px 2px', }} onClick={() => bookNow(e)}>
+                                            <Card.Img variant="top" src={vehicle} style={{ height: '47%',  }} />
+                                            <Card.Body style={{ height: '53%' }}>
+                                                <Card.Title>{` ${e.vehicle}`}</Card.Title>
+                                                <Card.Text>{`No. Of Seats ${e.noOfSeats}`}</Card.Text>
+                                                <Card.Text>{`Price: ${e.pricePerSeat}`}</Card.Text>
+                                                <Card.Text>{`Route: ${e.routes}`}</Card.Text>
+                                                <Card.Text>{`Transport Category: ${e.transportCategory}`}</Card.Text>
+                                                <Card.Footer >
+                                                    <small className="text-muted">Last updated 3 mins ago</small>
+                                                </Card.Footer>
+                                            </Card.Body>
+                                        </Card>
+                                    {/* </CardGroup> */}
                                 </Grid>
                             ))}
                         </Grid>
