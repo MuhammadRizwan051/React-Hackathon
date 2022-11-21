@@ -8,7 +8,7 @@ import SMSelect from '../../components/SMSelect'
 import SMTimePicker from '../../components/SMTimePicker'
 import { sendData } from '../../config/firebasemethod'
 
-function Transport() {
+function AddTransport() {
 
     let [model, setModel] = useState([])
     let [btn, setBtn] = useState(true)
@@ -97,9 +97,9 @@ function Transport() {
 
     return (
         <>
-            <Box mt={6}>
-                <Typography variant='h3' sx={{ fontWeight: 'bold', fontFamily: 'cursive' }}> Transport</Typography>
-                <Grid container mt={3} spacing={3} paddingX={50} >
+            <Box mt={6} paddingX={70}>
+                <Typography variant='h3' sx={{ fontWeight: 'bold', fontFamily: 'cursive', color:'white' }}> Transport</Typography>
+                <Grid container mt={3} rowSpacing={3} paddingX='50px' paddingBottom='30px' sx={{backgroundColor:'white', borderRadius: '40px' }}>
                     <Grid item md={12}>
                         <SMSelect label='Transport Category' variant='standard' datasource={transportCategory} onChange={(e) => setModel({ ...model, transportCategory: e.target.value })} />
                     </Grid>
@@ -133,4 +133,4 @@ function Transport() {
     )
 }
 
-export default Transport
+export default AddTransport

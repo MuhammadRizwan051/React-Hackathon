@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import SMButton from '../components/SMButton'
 import SMInput from '../components/SMInput'
-import SMFullScreenLoader from '../components/SMFullScreenLoader'
+import SMLoader from '../components/SMLoader'
 import { sendData } from '../config/firebasemethod'
 
 function UserForm() {
@@ -20,7 +20,7 @@ function UserForm() {
                 setLoader(false)
                 navigate('/userForm')
                 console.log(success);
-                setModel({})
+                // setModel({})
                 alert('Your details has been submitted')
             }))
             .catch((err => {
@@ -57,7 +57,7 @@ function UserForm() {
                             <SMInput label='Contact' variant='standard' value={model.contact} onChange={(e) => setModel({ ...model, contact: e.target.value })} />
                         </Grid>
                         <Grid item md={12}>
-                            <SMButton label={loader? <SMFullScreenLoader /> : 'Submit'} size='large' variant='contained' onClick={submit} disabled={btn} />
+                            <SMButton label={loader? <SMLoader style={{color: 'inherit'}} /> : 'Submit'} size='large' variant='contained' onClick={submit} disabled={btn} />
                         </Grid>
 
                     </Grid>

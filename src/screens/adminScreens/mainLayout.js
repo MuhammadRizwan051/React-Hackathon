@@ -21,10 +21,10 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { logoutUser } from "../../config/firebasemethod";
 import { AccountCircle } from "@mui/icons-material";
-import Transport from "./transport";
-import Products from "./products";
 import AdminProfile from "./adminProfile";
 import BookingDetails from "./bookingDetails";
+import AddTransport from "./addTransport";
+import backgroundImage from '../../assets/adminBackground.webp'
 
 
 const drawerWidth = 240;
@@ -77,11 +77,11 @@ function MainLayout(props) {
     const drawer = (
 
         <div style={{}}>
-            <Typography variant="h5" sx={{ my: 2, textAlign: "center", fontFamily:'cursive',  }}>
+            <Typography variant="h5" sx={{ my: 2, textAlign: "center", fontFamily: 'cursive', }}>
                 Admin
             </Typography>
             <Divider />
-            <List sx={{minHeight: '92vh', }}>
+            <List sx={{ minHeight: '92vh', }}>
                 {datasource.length > 0 && datasource.map((text, index) => (
                     <ListItem key={index} disablePadding>
                         <ListItemButton onClick={() => { navigate(text.url) }}>
@@ -101,14 +101,14 @@ function MainLayout(props) {
 
 
     return (
-        <Box sx={{ display: "flex"}}>
+        <Box sx={{ display: "flex", }}>
             <CssBaseline />
             <AppBar
                 position="fixed"
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
-                    // backgroundColor: '#153462' 
+                    // ml: { sm: `${drawerWidth}px` },
+                    backgroundColor: 'black'
                 }}
             >
                 <Toolbar sx={{ justifyContent: { xs: "space-between", sm: "right" } }}>
@@ -118,9 +118,12 @@ function MainLayout(props) {
                         edge="start"
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: "none" } }}
-                    >
+                        >
                         <MenuIcon />
                     </IconButton>
+                        {/* <Typography variant="h6" noWrap component="div" sx={{ justifyContent: { xs: "space-between", sm: "left" } }}>
+                            Responsive drawer
+                        </Typography> */}
 
                     {auth && (
                         <div>
@@ -197,16 +200,23 @@ function MainLayout(props) {
             <Box
                 component="main"
                 sx={{
-                    backgroundColor:'lightBlue',
-                    minHeight:'99vh',
+                    // backgroundImage: `url(${AdminBackground})`,
+                    backgroundRepeat : 'no-repeat',
+                    backgroundAttachment : 'fixed',
+                    backgroundSize: '100% 100%',
+                    backgroundColor: '#16213E',
+                    backgroundImage: `url(${backgroundImage})`,
+                    backdropFilter: `blur(0px)`,
+                    minHeight: '99vh',
                     flexGrow: 1,
                     p: 3,
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                 }}
             >
-                <Box sx={{backgroundColor:'lightBlue'}}>
+
+                <Box>
                     <Routes>
-                        <Route path='transport' element={<Transport />} />
+                        <Route path='addTransport' element={<AddTransport />} />
                         <Route path='bookingDetails' element={<BookingDetails />} />
                         <Route path='profile' element={<AdminProfile />} />
                     </Routes>

@@ -3,7 +3,7 @@ import MainLayout from './adminScreens/mainLayout'
 import { useNavigate } from 'react-router-dom';
 import { checkUser } from '../config/firebasemethod';
 import SMFullScreenLoader from '../components/SMFullScreenLoader';
-import Transport from './adminScreens/transport';
+import AddTransport from './adminScreens/addTransport';
 import BookingDetails from './adminScreens/bookingDetails';
 
 function Admin() {
@@ -12,9 +12,9 @@ function Admin() {
 
   const list = [
     {
-      name: 'Transport',
-      url: 'transport',
-      element: <Transport />
+      name: 'Add Transport',
+      url: 'addTransport',
+      element: <AddTransport />
     },
     {
       name: 'Booking Details',
