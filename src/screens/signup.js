@@ -8,20 +8,37 @@ import '../App.css';
 import CircularProgress from "@mui/material/CircularProgress";
 import userImg from '../assets/user.png'
 import SMButton from "../components/SMButton";
+import SMInput from "../components/SMInput";
+import SMRadio from "../components/SMRadio";
 
 
 function Signup() {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [category, setCategory] = useState("");
+
+  const [list, setList] = useState([
+    {
+      fullName: 'Book a Ride',
+      id: 'Book a Ride'
+    },
+    {
+      fullName: 'Add Transport',
+      id: 'Add Transport'
+    }
+  ])
 
 
   let signUp = () => {
     setIsLoading(true)
-    signUpUser({ email, password, category:'user' })
+    signUpUser({ email, password, category })
       .then((success) => {
         setIsLoading(false)
         // Signed in
-        navigate('/')
+        navigate('/login')
         console.log(success);
       })
       .catch((error) => {
@@ -29,10 +46,6 @@ function Signup() {
         console.log(error);
       });
   };
-  // const navigate = useNavigate();
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
 
   return (
@@ -59,19 +72,41 @@ function Signup() {
             />
           </Box> */}
           <Box mt={2}>
-            <TextField
+            <SMInput
+              label="Full Name"
+              variant="outlined"
+              fullWidth
+              type="text"
+              placeholder='Full Name'
+              onChange={(e) => setFullName(e.target.value)}
+            />
+          </Box>
+          <Box mt={2}>
+            <SMInput
               label="Email"
               variant="outlined"
               fullWidth
+              type="password"
+              placeholder='Email'
               onChange={(e) => setEmail(e.target.value)}
             />
           </Box>
           <Box mt={2}>
-            <TextField
+            <SMInput
               label="Password"
               variant="outlined"
               fullWidth
               type="password"
+              placeholder='New Password'
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Box>
+          <Box mt={2}>
+            <SMRadio
+              // label="Category"
+              // variant="outlined"
+              groupLabel='Category'
+              datasource={list}
               onChange={(e) => setPassword(e.target.value)}
             />
           </Box>

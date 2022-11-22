@@ -158,6 +158,10 @@ function Main() {
                                 <SMButton label='Book A Transport' size='large' sx={{ width: 1, fontSize: '20px', backgroundImage: `linear-gradient(to top, #003418, #009D4E)` }} />
                             </Grid>
                         </Grid>
+
+                        <Box sx={{ backgroundColor: '#242948', height: '600px' }} mt={10}>
+                            <Typography height='10%' variant='h3' sx={{ fontWeight: 'bold', color: 'white', fontFamily: 'cursive' }}>Footer</Typography>
+                        </Box>
                     </>
                 )
             }
