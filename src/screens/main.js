@@ -15,6 +15,7 @@ import hiaceImage from '../assets/hiace.png'
 import carImage from '../assets/car.png'
 import SMNavbar from '../components/SMNavbar'
 import { Box } from '@mui/system';
+import SMButton from '../components/SMButton';
 // import Container from '@mui/material/Container'
 
 
@@ -126,7 +127,7 @@ function Cards() {
                             </Grid>
                         </Box>
 
-                        <Box>
+                        {/* <Box>
                             <Grid container paddingX={25} columnSpacing={2} rowSpacing={3}  >
                                 {data && data.map((e, i) => (
                                     <Grid item md={3}>
@@ -146,7 +147,16 @@ function Cards() {
                                     </Grid>
                                 ))}
                             </Grid>
-                        </Box>
+                        </Box> */}
+
+                        <Grid container columnSpacing={2} mt={5}>
+                            <Grid item md={6}>
+                                <SMButton label='Add Transport' size='large' sx={{width: 1, fontSize:'20px', backgroundImage: `linear-gradient(to top, #003418, #009D4E)`}} />
+                            </Grid>
+                            <Grid item md={6}>
+                                <SMButton label='Book A Transport' size='large' sx={{width: 1, fontSize:'20px', backgroundImage: `linear-gradient(to top, #003418, #009D4E)`}} />
+                            </Grid>
+                        </Grid>
                     </>
                 )
             }

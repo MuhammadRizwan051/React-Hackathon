@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import MainLayout from './adminScreens/mainLayout'
+import MainLayout from './transporterScreens/mainLayout'
 import { useNavigate } from 'react-router-dom';
 import { checkUser } from '../config/firebasemethod';
 import SMFullScreenLoader from '../components/SMFullScreenLoader';
-import AddTransport from './adminScreens/addTransport';
-import BookingDetails from './adminScreens/bookingDetails';
+import AddTransport from './transporterScreens/addTransport';
+import BookingDetails from './transporterScreens/bookingDetails';
 
-function Admin() {
+function Transporter() {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
 
@@ -49,4 +49,4 @@ function Admin() {
   );
 }
 
-export default Admin
+export default Transporter
