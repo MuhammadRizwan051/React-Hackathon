@@ -19,7 +19,9 @@ import SMButton from '../components/SMButton';
 // import Container from '@mui/material/Container'
 
 
-function Cards() {
+function Main() {
+    const navigate = useNavigate()
+
     let [data, setData] = useState()
     let [isLoader, setIsLoader] = useState(true)
     let getTransportData = () => {
@@ -34,14 +36,13 @@ function Cards() {
                 alert(err)
             })
     }
-    console.log(data)
     useEffect(() => { getTransportData() }, [])
 
-    const navigate = useNavigate()
 
-    let bookNow = (e) => {
-        console.log('Click')
-        navigate('/userForm', { state: e })
+    let addTransport = () => {
+        navigate('/login')
+        // console.log('Click')
+        // navigate('/userForm')
     }
 
     return (
@@ -151,10 +152,10 @@ function Cards() {
 
                         <Grid container columnSpacing={2} mt={5}>
                             <Grid item md={6}>
-                                <SMButton label='Add Transport' size='large' sx={{width: 1, fontSize:'20px', backgroundImage: `linear-gradient(to top, #003418, #009D4E)`}} />
+                                <SMButton label='Add Transport' size='large' onClick={addTransport} sx={{ width: 1, fontSize: '20px', backgroundImage: `linear-gradient(to top, #003418, #009D4E)` }} />
                             </Grid>
                             <Grid item md={6}>
-                                <SMButton label='Book A Transport' size='large' sx={{width: 1, fontSize:'20px', backgroundImage: `linear-gradient(to top, #003418, #009D4E)`}} />
+                                <SMButton label='Book A Transport' size='large' sx={{ width: 1, fontSize: '20px', backgroundImage: `linear-gradient(to top, #003418, #009D4E)` }} />
                             </Grid>
                         </Grid>
                     </>
@@ -165,4 +166,4 @@ function Cards() {
     )
 }
 
-export default Cards
+export default Main

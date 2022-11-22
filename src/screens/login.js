@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Typography, Button, TextField, Box } from "@mui/material";
 import { loginUser } from "../config/firebasemethod";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../App.css';
 import Loader from '../assets/1.gif'
 import CircularProgress from "@mui/material/CircularProgress";
@@ -29,7 +29,7 @@ function Login() {
         if (success.category === 'user') {
           navigate(`/user/${success.id}`)
         }
-        if(success.category === 'admin') {
+        if (success.category === 'admin') {
           navigate(`/admin/${success.id}`)
         }
         console.log((success))
@@ -48,7 +48,7 @@ function Login() {
           <h2 variant="h1" align="center" color="error">Login
           </h2>
           <Box mt={3}>
-            <Button className='button' variant="contained" size="large" sx={{ width: '50%' }} onClick={() => navigate('/')}>
+            <Button className='button' variant="contained" size="large" sx={{ width: '50%' }} onClick={() => navigate('/login')}>
               Login
             </Button>
             <Button variant="outlined" size="large" sx={{ width: '50%', fontWeight: 'bold', color: 'black' }} onClick={() => navigate('/signup')}>
